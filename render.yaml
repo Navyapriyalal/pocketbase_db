@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pocketbase-backend
+    env: docker
+    plan: free
+    region: oregon
+    disk:
+      name: pb_data
+      mountPath: /pb_data
+      sizeGB: 1
+    buildCommand: ""
+    startCommand: "./pocketbase serve --http 0.0.0.0:10000 --dir /pb_data"
